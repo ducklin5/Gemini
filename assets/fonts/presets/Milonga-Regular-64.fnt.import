@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://csp0ej63up7dp"
+path="res://.godot/imported/Milonga-Regular-64.fnt-9ee9db188afa9481af5886b8cc1225b6.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/presets/Milonga-Regular-64.fnt"
+dest_files=["res://.godot/imported/Milonga-Regular-64.fnt-9ee9db188afa9481af5886b8cc1225b6.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true

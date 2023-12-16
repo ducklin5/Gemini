@@ -1,0 +1,14 @@
+[configuration]
+entry_symbol = "gdext_rust_init"
+compatibility_minimum = 4.2
+reloadable = true
+
+[libraries]
+linux.debug.x86_64 = "res://gdext/rust/target/debug/gemini_rs.so"
+linux.release.x86_64 = "res://gdext/rust/target/release/gemini_rs.so"
+windows.debug.x86_64 = "res://gdext/rust/target/debug/gemini_rs.dll"
+windows.release.x86_64 = "res://gdext/rust/target/release/gemini_rs.dll"
+macos.debug = "res://gdext/rust/target/debug/gemini_rs.dylib"
+macos.release = "res://gdext/rust/target/release/gemini_rs.dylib"
+macos.debug.arm64 = "res://gdext/rust/target/debug/gemini_rs.dylib"
+macos.release.arm64 = "res://gdext/rust/target/release/gemini_rs.dylib"

@@ -1,0 +1,107 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "gdext/rust"
+    }
+  ],
+  "settings": {
+    "triggerTaskOnSave.tasks": {
+      "Rust: Build GDExt Lib": ["**/*.rs"]
+    }
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Rust: Build GDExt Lib",
+        "type": "cargo",
+        "options": {
+          "cwd": "${workspaceFolder:rust}",
+          "statusbar": {
+            "color": "#78efb8"
+          }
+        },
+        "command": "build",
+        "problemMatcher": ["$rustc"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "Rust: Clean",
+        "detail": "Removes all artifacts of rust game library and its dependencies",
+        "type": "shell",
+        "options": {
+          "cwd": "${workspaceFolder:rust}"
+        },
+        "command": "cargo clean",
+        "group": "build",
+        "problemMatcher": ["$rustc"]
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch & Debug Game (GDExt Rust)",
+        "type": "lldb", // type provided by CodeLLDB extension
+        "request": "launch",
+        "preLaunchTask": "Rust: Build GDExt Lib",
+        "args": [
+          "-w" // windowed mode
+        ],
+        "program": "E:/gameDev/Godot/Engine/godot/bin/godot.windows.editor.x86_64.exe",
+        "presentation": {
+          "group": "1",
+          "order": 1
+        }
+      },
+      {
+        "name": "Launch & Debug Editor (GDExt Rust)",
+        "type": "lldb", // type provided by CodeLLDB extension
+        "request": "launch",
+        "preLaunchTask": "Rust: Build GDExt Lib",
+        "args": [
+          "-e", // run editor (remove this to launch the scene directly)
+          "-w" // windowed mode
+        ],
+        "program": "E:/gameDev/Godot/Engine/godot/bin/godot.windows.editor.x86_64.exe",
+        "presentation": {
+          "group": "1",
+          "order": 1
+        }
+      },
+      {
+        "name": "Attach & Debug Editor (GDScript)",
+        "type": "godot",
+        "request": "launch",
+        "project": "${workspaceFolder:Gemini}",
+        "port": 6007,
+        "address": "http://127.0.0.1",
+        "launch_game_instance": true,
+        "launch_scene": false,
+        "presentation": {
+          "group": "1",
+          "order": 2
+        }
+      },
+      {
+        "name": "Attach & Debug Editor (GDExt Rust)",
+        "pid": "${command:pickMyProcess}",
+        "type": "lldb",
+        "request": "attach",
+        "program": "godot",
+        "presentation": {
+          "group": "1",
+          "order": 3
+        }
+      }
+    ],
+    "compounds": []
+  }
+}

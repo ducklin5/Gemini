@@ -1,0 +1,13 @@
+[package]
+name = "gemini_rs"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+debug = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+godot = { git = "https://github.com/godot-rust/gdext", branch = "master" }

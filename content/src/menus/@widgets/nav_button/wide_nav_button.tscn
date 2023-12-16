@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd7dq0t5uaas8"]
+
+[ext_resource type="Material" uid="uid://dylri20e0mc8x" path="res://content/src/menus/@widgets/nav_button/disabled_button.tres" id="3"]
+
+[sub_resource type="GDScript" id="7"]
+script/source = "extends Button
+
+@export var disabledMaterial: Material
+
+func _ready():
+	setStyle() 
+
+func _input(event):
+	if has_focus():
+		if event.is_action(\"ui_right\"):
+			emit_signal(\"pressed\")
+
+func _process(delta):
+	setStyle()
+
+func setStyle():
+	if disabled:
+		material = disabledMaterial
+		material.set_shader_param(\"rectScreenPos\", 
+			get_viewport_transform() * global_position)
+		material.set_shader_param(\"rectScreenSize\", 
+			get_viewport_transform() * size)
+	elif has_focus():
+		material = null
+		
+	else:
+		material = null
+
+func _on_Button_pressed():
+	button_pressed = true
+"
+
+[node name="Button" type="Button"]
+offset_right = 127.0
+offset_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
+text = "Button"
+clip_text = true
+script = SubResource("7")
+disabledMaterial = ExtResource("3")
+
+[connection signal="pressed" from="." to="." method="_on_Button_pressed"]

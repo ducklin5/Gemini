@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bbulfumn1ervw"
+path="res://.godot/imported/test.fnt-917954995ec5e8cd96766f515e2681ca.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/test.fnt"
+dest_files=["res://.godot/imported/test.fnt-917954995ec5e8cd96766f515e2681ca.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true

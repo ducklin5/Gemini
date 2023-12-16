@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dylri20e0mc8x"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type canvas_item;
+uniform vec3 rectScreenPos;
+uniform vec3 rectScreenSize;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+
+	vec3 fragRectCoord = FRAGCOORD.xyz - rectScreenPos;
+	vec3 fragRectUV = fragRectCoord / rectScreenSize;
+
+	COLOR.rgb = color.rgb;
+	COLOR.a = color.a * fragRectUV.x * 0.5;
+
+}"
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource("1")
+shader_parameter/rectScreenPos = null
+shader_parameter/rectScreenSize = null
