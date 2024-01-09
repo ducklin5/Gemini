@@ -78,3 +78,17 @@ macro_rules! scene {
         scene!( @inner $root, [] $($tokens)*);
     };
 }
+
+#[macro_export]
+macro_rules! path2imgtex {
+    ($path:expr) => {
+        {
+            use godot::engine::{ImageTexture, Image};
+            let mut tex = ImageTexture::new_gd();
+            let mut img = Image::new_gd();
+            img.load($path.into());
+            tex.set_image(img);
+            tex
+        }
+    }
+}

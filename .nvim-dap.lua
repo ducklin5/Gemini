@@ -37,5 +37,5 @@ dap.configurations.rust = {
 
 vim.api.nvim_create_autocmd({"BufWritePost"}, {
 	pattern = {"*.rs"},
-	command = "!sh -C cargo build --manifest-path=gdext/rust/Cargo.toml"
+	command = "!cargo build --manifest-path=gdext/rust/Cargo.toml"
 })

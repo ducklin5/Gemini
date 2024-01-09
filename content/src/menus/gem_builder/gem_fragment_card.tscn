@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://bm04isniv218x"]
 
 [node name="GemFragmentCard" type="GemFragmentCard"]
+anchors_preset = 10
+offset_left = 3.0
+offset_top = -1.0
+offset_right = -985.0
+offset_bottom = 95.0
+grow_horizontal = 2

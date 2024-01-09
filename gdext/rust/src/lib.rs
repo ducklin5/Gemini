@@ -1,4 +1,4 @@
-mod lab;
+mod core;
 mod menus;
 mod macros;
 
@@ -14,7 +14,6 @@ unsafe impl ExtensionLibrary for GeminiExtension {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 
     #[test]
     fn it_works() {

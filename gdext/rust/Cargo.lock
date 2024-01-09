@@ -22,6 +22,7 @@ name = "gemini_rs"
 version = "0.1.0"
 dependencies = [
  "godot",
+ "rand",
 ]
 
 [[package]]
@@ -56,7 +57,7 @@ checksum = "8e4afd9ad95555081e109fe1d21f2a30c691b5f0919c67dfa690a2e1eb6bd51c"
 [[package]]
 name = "godot"
 version = "0.1.0"
-source = "git+https://github.com/godot-rust/gdext?branch=master#77e3b958e53e59f19b4d6ef23a83f01eb6304123"
+source = "git+https://github.com/godot-rust/gdext?branch=master#292096c02357b37bc08ad966bcf18a7a14ac46f2"
 dependencies = [
  "godot-core",
  "godot-macros",
@@ -65,15 +66,20 @@ dependencies = [
 [[package]]
 name = "godot-bindings"
 version = "0.1.0"
-source = "git+https://github.com/godot-rust/gdext?branch=master#77e3b958e53e59f19b4d6ef23a83f01eb6304123"
+source = "git+https://github.com/godot-rust/gdext?branch=master#292096c02357b37bc08ad966bcf18a7a14ac46f2"
 dependencies = [
  "godot4-prebuilt",
 ]
 
 [[package]]
+name = "godot-cell"
+version = "0.1.0"
+source = "git+https://github.com/godot-rust/gdext?branch=master#292096c02357b37bc08ad966bcf18a7a14ac46f2"
+
+[[package]]
 name = "godot-codegen"
 version = "0.1.0"
-source = "git+https://github.com/godot-rust/gdext?branch=master#77e3b958e53e59f19b4d6ef23a83f01eb6304123"
+source = "git+https://github.com/godot-rust/gdext?branch=master#292096c02357b37bc08ad966bcf18a7a14ac46f2"
 dependencies = [
  "godot-bindings",
  "godot-fmt",
@@ -87,10 +93,11 @@ dependencies = [
 [[package]]
 name = "godot-core"
 version = "0.1.0"
-source = "git+https://github.com/godot-rust/gdext?branch=master#77e3b958e53e59f19b4d6ef23a83f01eb6304123"
+source = "git+https://github.com/godot-rust/gdext?branch=master#292096c02357b37bc08ad966bcf18a7a14ac46f2"
 dependencies = [
  "glam",
  "godot-bindings",
+ "godot-cell",
  "godot-codegen",
  "godot-ffi",
 ]
@@ -98,7 +105,7 @@ dependencies = [
 [[package]]
 name = "godot-ffi"
 version = "0.1.0"
-source = "git+https://github.com/godot-rust/gdext?branch=master#77e3b958e53e59f19b4d6ef23a83f01eb6304123"
+source = "git+https://github.com/godot-rust/gdext?branch=master#292096c02357b37bc08ad966bcf18a7a14ac46f2"
 dependencies = [
  "gensym",
  "godot-bindings",
@@ -109,7 +116,7 @@ dependencies = [
 [[package]]
 name = "godot-fmt"
 version = "0.1.0"
-source = "git+https://github.com/godot-rust/gdext?branch=master#77e3b958e53e59f19b4d6ef23a83f01eb6304123"
+source = "git+https://github.com/godot-rust/gdext?branch=master#292096c02357b37bc08ad966bcf18a7a14ac46f2"
 dependencies = [
  "proc-macro2",
 ]
@@ -117,7 +124,7 @@ dependencies = [
 [[package]]
 name = "godot-macros"
 version = "0.1.0"
-source = "git+https://github.com/godot-rust/gdext?branch=master#77e3b958e53e59f19b4d6ef23a83f01eb6304123"
+source = "git+https://github.com/godot-rust/gdext?branch=master#292096c02357b37bc08ad966bcf18a7a14ac46f2"
 dependencies = [
  "godot-bindings",
  "proc-macro2",
@@ -128,7 +135,7 @@ dependencies = [
 [[package]]
 name = "godot4-prebuilt"
 version = "0.0.0"
-source = "git+https://github.com/godot-rust/godot4-prebuilt?branch=4.2#9e60296be502e294dde3f245971f2868ce553677"
+source = "git+https://github.com/godot-rust/godot4-prebuilt?branch=4.2#3328a4cded2da9c9a3e2c4f7e42f649f677648ce"
 
 [[package]]
 name = "heck"
@@ -138,15 +145,15 @@ checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
 
 [[package]]
 name = "libc"
-version = "0.2.150"
+version = "0.2.152"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "89d92a4743f9a61002fae18374ed11e7973f530cb3a3255fb354818118b2203c"
+checksum = "13e3bf6590cbc649f4d1a3eefc9d5d6eb746f5200ffb04e5e142700b8faa56e7"
 
 [[package]]
 name = "memchr"
-version = "2.6.4"
+version = "2.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f665ee40bc4a3c5590afb1e9677db74a508659dfd71e126420da8274909a0167"
+checksum = "523dc4f511e55ab87b694dc30d0f820d60906ef06413f93d4d7a1385599cc149"
 
 [[package]]
 name = "nanoserde"
@@ -170,21 +177,57 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c"
 
 [[package]]
-name = "proc-macro2"
-version = "1.0.70"
+name = "ppv-lite86"
+version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "39278fbbf5fb4f646ce651690877f89d1c5811a3d4acb27700c1cb3cdb78fd3b"
+checksum = "5b40af805b3121feab8a3c29f04d8ad262fa8e0561883e7653e024ae4479e6de"
+
+[[package]]
+name = "proc-macro2"
+version = "1.0.76"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "95fc56cda0b5c3325f5fbbd7ff9fda9e02bb00bb3dac51252d2f1bfa1cb8cc8c"
 dependencies = [
  "unicode-ident",
 ]
 
 [[package]]
 name = "quote"
-version = "1.0.33"
+version = "1.0.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae"
+checksum = "291ec9ab5efd934aaf503a6466c5d5251535d108ee747472c3977cc5acc868ef"
 dependencies = [
  "proc-macro2",
+]
+
+[[package]]
+name = "rand"
+version = "0.8.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404"
+dependencies = [
+ "libc",
+ "rand_chacha",
+ "rand_core",
+]
+
+[[package]]
+name = "rand_chacha"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e6c10a63a0fa32252be49d21e7709d4d4baf8d231c2dbce1eaa8141b9b127d88"
+dependencies = [
+ "ppv-lite86",
+ "rand_core",
+]
+
+[[package]]
+name = "rand_core"
+version = "0.6.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
+dependencies = [
+ "getrandom",
 ]
 
 [[package]]
@@ -218,9 +261,9 @@ checksum = "c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f"
 
 [[package]]
 name = "syn"
-version = "2.0.39"
+version = "2.0.48"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "23e78b90f2fcf45d3e842032ce32e3f2d1545ba6636271dcbf24fa306d87be7a"
+checksum = "0f3531638e407dfc0814761abb7c00a5b54992b849452a0646b7f65c9f770f3f"
 dependencies = [
  "proc-macro2",
  "quote",
