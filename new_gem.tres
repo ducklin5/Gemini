@@ -1,0 +1,8 @@
+[gd_resource type="Gem" script_class="GemGd" load_steps=2 format=3 uid="uid://bah8cm1hk8ed2"]
+
+[ext_resource type="Script" path="res://content/src/core/GemGd.gd" id="1_d11be"]
+
+[resource]
+input_fragments = Array[GemFragment]([null])
+issues = Array[String](["Frag at idx 0. FragmentNotValid: Fragment is not an Input Fragment"])
+script = ExtResource("1_d11be")

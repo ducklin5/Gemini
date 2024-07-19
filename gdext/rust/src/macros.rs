@@ -92,3 +92,15 @@ macro_rules! path2imgtex {
         }
     }
 }
+
+#[macro_export]
+macro_rules! emit_signal {
+    ($self:expr, $signal:expr) => {
+        let mut this = $self.base_mut();
+        this.emit_signal($signal.into(), &[]);
+    };
+    ($self:expr, $signal:expr, $args:expr) => {
+        let mut this = $self.base_mut();
+        this.emit_signal($signal.into(), $args);
+    };
+}

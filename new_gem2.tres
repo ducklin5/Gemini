@@ -1,0 +1,15 @@
+[gd_resource type="Gem" script_class="GemGd" load_steps=4 format=3 uid="uid://cehqlw1uaarkw"]
+
+[ext_resource type="Script" path="res://content/src/core/GemGd.gd" id="1_70okd"]
+[ext_resource type="Script" path="res://content/src/core/GemFragmentGd.gd" id="1_b3h0o"]
+
+[sub_resource type="GemFragment" id="GemFragment_erqnw"]
+id = "vvex"
+frag_class = 6
+resource_name = "DriverDirective:vvex"
+script = ExtResource("1_b3h0o")
+
+[resource]
+driver_fragments = Array[GemFragment]([SubResource("GemFragment_erqnw"), null])
+issues = Array[String](["Frag at idx 1. FragmentNotValid: Fragment is not a Driver fragment"])
+script = ExtResource("1_70okd")

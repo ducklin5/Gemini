@@ -1,115 +1,13 @@
 Initialize godot-rust (API v4.2.stable.official, runtime v4.3.dev.custom_build)
 Godot Engine v4.3.dev.custom_build.f70198016 - https://godotengine.org
-TextServer: Added interface "Dummy"
-TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
-Native OpenGL API detected: 3.3: NVIDIA - NVIDIA GeForce GTX 1660 SUPER
-NVAPI: Init OK!
-NVAPI: Application not found, adding to profile...
-NVAPI: Disabled OpenGL threaded optimization successfully
-Using "wintab" pen tablet driver...
-Shader 'CanvasSdfShaderGLES3' SHA256: 44b00844fb27fa7dccf33d2892d93fe78f51f72edceb69adf17dd258fc65f49b
-Shader 'SkeletonShaderGLES3' SHA256: bc23dbb7438e455dc537ece7763bff17b9659f67fab03f05dfec83d372ec392b
-Shader 'ParticlesShaderGLES3' SHA256: 940bd33476dbeded24c34f1d77bf91067a152ab629d8173080a4370d29e850c2
-Shader 'ParticlesCopyShaderGLES3' SHA256: f3668c6b75a992cd39a0f30ec8d3ff6f9671a17d98a9f5ec9ea11463965796e4
-Shader 'CopyShaderGLES3' SHA256: 8bece59f164f44c38a3ea29930d52e9566bffa08969e75c03da1983502e8a991
-Shader 'CanvasShaderGLES3' SHA256: 8b90e0785d752f3303e827cf9199c896dfb368803d02e058b1febef593f06695
-Shader 'CanvasOcclusionShaderGLES3' SHA256: 0ffa140ab112a9b96eb0137527caf2276c20da0d3c524ad124199be81d9fe648
-Shader 'SceneShaderGLES3' SHA256: a3a727f3a644150e1e4dd79004304fd938a2ad3a6753d5da578883db14361eef
-Shader 'SkyShaderGLES3' SHA256: ea75ed93c1a0377b86f4e36859470dc29b1a67d6f4984c13a2410e8ae73b6dd0
-Shader 'CubemapFilterShaderGLES3' SHA256: 171990989dc64645f36e811900cae912a5417a4a15914adc12a5d0c3ba8301d8
 OpenGL API 3.3.0 NVIDIA 531.29 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 SUPER
-WASAPI: Activated output_device using IAudioClient3 interface
-WASAPI: wFormatTag = 65534
-WASAPI: nChannels = 2
-WASAPI: nSamplesPerSec = 48000
-WASAPI: nAvgBytesPerSec = 384000
-WASAPI: nBlockAlign = 8
-WASAPI: wBitsPerSample = 32
-WASAPI: cbSize = 22
-WASAPI: mix_rate = 48000
-WASAPI: fundamental_period_frames = 480
-WASAPI: min_period_frames = 480
-WASAPI: max_period_frames = 480
-WASAPI: selected a period frame size of 480
-WASAPI: detected 2 channels
-WASAPI: audio buffer frames: 480 calculated latency: 10ms
  
-TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
-CORE API HASH: 2857546461
-EDITOR API HASH: 921607715
-Loaded system CA certificates
-thread '<unnamed>' panicked at 'downcast from Resource to GemFragment failed; instance Gd { id: -9223372007981185776, class: Resource }', C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\obj\gd.rs:370:13
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-
-================================================================
-CrashHandlerException: Program crashed
-Engine version: Godot Engine v4.3.dev.custom_build (f701980165863b46337ed27f451020e9d189f743)
-Dumping the backtrace. Please include this when reporting the bug to the project developer.
-[0] <couldn't map PC to fn name>
-[1] <couldn't map PC to fn name>
-[2] panic_unwind::__rust_start_panic (/rustc/90c541806f23a127002de5b4038be731ba1458ca/library\panic_unwind\src\lib.rs:103)
-[3] std::panicking::rust_panic (/rustc/90c541806f23a127002de5b4038be731ba1458ca/library\std\src\panicking.rs:741)
-[4] std::panicking::rust_panic_with_hook (/rustc/90c541806f23a127002de5b4038be731ba1458ca/library\std\src\panicking.rs:713)
-[5] std::panicking::begin_panic_handler::closure$0 (/rustc/90c541806f23a127002de5b4038be731ba1458ca/library\std\src\panicking.rs:582)
-[6] std::sys_common::backtrace::__rust_end_short_backtrace<std::panicking::begin_panic_handler::closure_env$0,never$> (/rustc/90c541806f23a127002de5b4038be731ba1458ca/library\std\src\sys_common\backtrace.rs:150)
-[7] std::panicking::begin_panic_handler (/rustc/90c541806f23a127002de5b4038be731ba1458ca/library\std\src\panicking.rs:578)
-[8] core::panicking::panic_fmt (/rustc/90c541806f23a127002de5b4038be731ba1458ca/library\core\src\panicking.rs:67)
-[9] godot_core::obj::gd::impl$1::cast::closure$0<godot_core::gen::classes::resource::re_export::Resource,gemini_rs::core::gem_fragment::GemFragment> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\obj\gd.rs:370)
-[10] enum2$<core::result::Result<godot_core::obj::gd::Gd<gemini_rs::core::gem_fragment::GemFragment>,godot_core::obj::gd::Gd<godot_core::gen::classes::resource::re_export::Resource> > >::unwrap_or_else<godot_core::obj::gd::Gd<gemini_rs::core::gem_fragment::GemFragment>,godot_core::obj::gd::Gd<godot_core::gen::classes::resource::re_export::Resource>,godot_core::obj::gd::impl$1::cast::closure_env$0<godot_core::gen::classes::resource::re_export::Resource,gemini_rs::core::gem_fragment::GemFragment> > (/rustc/90c541806f23a127002de5b4038be731ba1458ca\library\core\src\result.rs:1466)
-[11] godot_core::obj::gd::Gd<godot_core::gen::classes::resource::re_export::Resource>::cast<godot_core::gen::classes::resource::re_export::Resource,gemini_rs::core::gem_fragment::GemFragment> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\obj\gd.rs:369)
-[12] gemini_rs::core::gem_fragment::impl$6::to_gd (E:\gameDev\Godot\Projects\Gemini\gdext\rust\src\core\gem_fragment.rs:39)
-[13] godot_core::obj::traits::WithBaseField::base_mut<gemini_rs::core::gem_fragment::GemFragment> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\obj\traits.rs:353)
-[14] gemini_rs::core::gem_fragment::impl$14::init (E:\gameDev\Godot\Projects\Gemini\gdext\rust\src\core\gem_fragment.rs:61)
-[15] gemini_rs::core::gem_fragment::impl$15::__godot_user_init (E:\gameDev\Godot\Projects\Gemini\gdext\rust\src\core\gem_fragment.rs:50)
-[16] core::ops::function::FnOnce::call_once<gemini_rs::core::gem_fragment::GemFragment (*)(godot_core::obj::base::Base<godot_core::gen::classes::resource::re_export::Resource>),tuple$<godot_core::obj::base::Base<godot_core::gen::classes::resource::re_export::Resource> > > (/rustc/90c541806f23a127002de5b4038be731ba1458ca\library\core\src\ops\function.rs:250)
-[17] godot_core::registry::callbacks::create_rust_part_for_existing_godot_part<gemini_rs::core::gem_fragment::GemFragment,gemini_rs::core::gem_fragment::GemFragment (*)(godot_core::obj::base::Base<godot_core::gen::classes::resource::re_export::Resource>)> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\registry.rs:558)
-[18] godot_core::registry::callbacks::create_custom<gemini_rs::core::gem_fragment::GemFragment,gemini_rs::core::gem_fragment::GemFragment (*)(godot_core::obj::base::Base<godot_core::gen::classes::resource::re_export::Resource>)> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\registry.rs:534)
-[19] godot_core::registry::callbacks::create<gemini_rs::core::gem_fragment::GemFragment> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\registry.rs:514)
-[20] godot_core::obj::gd::Gd<gemini_rs::core::gem_fragment::GemFragment>::default_instance<gemini_rs::core::gem_fragment::GemFragment> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\obj\gd.rs:397)
-[21] godot_core::obj::traits::cap::GodotDefault::__godot_default<gemini_rs::core::gem_fragment::GemFragment> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\obj\traits.rs:453)
-[22] godot_core::obj::gd::impl$10::default<gemini_rs::core::gem_fragment::GemFragment> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\obj\gd.rs:631)
-[23] godot_core::obj::traits::impl$3::new_gd<gemini_rs::core::gem_fragment::GemFragment> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\obj\traits.rs:389)
-[24] gemini_rs::menus::gem_builder::impl$12::init (E:\gameDev\Godot\Projects\Gemini\gdext\rust\src\menus\gem_builder.rs:18)
-[25] gemini_rs::menus::gem_builder::impl$13::__godot_user_init (E:\gameDev\Godot\Projects\Gemini\gdext\rust\src\menus\gem_builder.rs:14)
-[26] core::ops::function::FnOnce::call_once<gemini_rs::menus::gem_builder::GemBuilderUI (*)(godot_core::obj::base::Base<godot_core::gen::classes::panel_container::re_export::PanelContainer>),tuple$<godot_core::obj::base::Base<godot_core::gen::classes::panel_container::re_export::PanelContainer> > > (/rustc/90c541806f23a127002de5b4038be731ba1458ca\library\core\src\ops\function.rs:250)
-[27] godot_core::registry::callbacks::create_rust_part_for_existing_godot_part<gemini_rs::menus::gem_builder::GemBuilderUI,gemini_rs::menus::gem_builder::GemBuilderUI (*)(godot_core::obj::base::Base<godot_core::gen::classes::panel_container::re_export::PanelContainer>)> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\registry.rs:558)
-[28] godot_core::registry::callbacks::create_custom<gemini_rs::menus::gem_builder::GemBuilderUI,gemini_rs::menus::gem_builder::GemBuilderUI (*)(godot_core::obj::base::Base<godot_core::gen::classes::panel_container::re_export::PanelContainer>)> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\registry.rs:534)
-[29] godot_core::registry::callbacks::create<gemini_rs::menus::gem_builder::GemBuilderUI> (C:\Users\Azeez\.cargo\git\checkouts\gdext-76630c89719e160c\292096c\godot-core\src\registry.rs:514)
-[30] <couldn't map PC to fn name>
-[31] <couldn't map PC to fn name>
-[32] <couldn't map PC to fn name>
-[33] <couldn't map PC to fn name>
-[34] <couldn't map PC to fn name>
-[35] <couldn't map PC to fn name>
-[36] <couldn't map PC to fn name>
-[37] <couldn't map PC to fn name>
-[38] <couldn't map PC to fn name>
-[39] <couldn't map PC to fn name>
-[40] <couldn't map PC to fn name>
-[41] <couldn't map PC to fn name>
-[42] <couldn't map PC to fn name>
-[43] <couldn't map PC to fn name>
-[44] <couldn't map PC to fn name>
-[45] <couldn't map PC to fn name>
-[46] <couldn't map PC to fn name>
-[47] <couldn't map PC to fn name>
-[48] <couldn't map PC to fn name>
-[49] <couldn't map PC to fn name>
-[50] <couldn't map PC to fn name>
-[51] <couldn't map PC to fn name>
-[52] <couldn't map PC to fn name>
-[53] <couldn't map PC to fn name>
-[54] <couldn't map PC to fn name>
-[55] <couldn't map PC to fn name>
-[56] <couldn't map PC to fn name>
-[57] <couldn't map PC to fn name>
-[58] <couldn't map PC to fn name>
-[59] <couldn't map PC to fn name>
-[60] <couldn't map PC to fn name>
-[61] <couldn't map PC to fn name>
-[62] <couldn't map PC to fn name>
-[63] <couldn't map PC to fn name>
-[64] <couldn't map PC to fn name>
-[65] <couldn't map PC to fn name>
--- END OF BACKTRACE --
-================================================================
+WARNING: Blend file import is enabled in the project settings, but no Blender path is configured in the editor settings. Blend files will not be imported.
+     at: _editor_init (modules\gltf\register_types.cpp:63)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/entities/critter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: Image::load (core\io\image.cpp:2495)
+WARNING: Glow is not supported when using the GL Compatibility backend yet. Support will be added in a future release.
+     at: RendererEnvironmentStorage::environment_set_glow (servers\rendering\storage\environment_storage.cpp:387)
+ERROR: Timer was not added to the SceneTree. Either add it or set autostart to true.
+   at: (scene\main\timer.cpp:109)
+Initialize godot-rust (API v4.2.stable.official, runtime v4.3.dev.custom_build)

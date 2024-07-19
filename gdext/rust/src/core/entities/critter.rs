@@ -84,7 +84,11 @@ impl Critter {
             let gem = gem_ref.bind();
             gem.get_fragments()
                 .iter()
-                .for_each(|(frag_id, frag)| self.add_fragment(*frag_id, frag.clone()));
+                .for_each(|(frag_id, frag_opt)| {
+                    if let Some(frag) = frag_opt {
+                        self.add_fragment(*frag_id, frag.clone());
+                    }
+                });
         }
     }
 
